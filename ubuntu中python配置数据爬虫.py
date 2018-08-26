@@ -4,6 +4,7 @@
 # 3.把下载的chromedriver放到/usr/local/bin/ => sudo mv chromedriver /usr/local/bin/
 # 4.安装python,再安装selenium => pip install bs4 pyquery selenium -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 # 5.测试环境是否配置成功 => from selenium import webdriver;browser = webdriver.Chrome();browser.get("http://www.baidu.com")
+# 6.注意可能会有pip与pip3区别
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
