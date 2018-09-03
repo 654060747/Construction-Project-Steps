@@ -1,4 +1,5 @@
 # codeing:utf-8
+#下载python => https://www.python.org/downloads/
 # 1.下载谷歌浏览器并安装 => http://www.ubuntuchrome.com/
 # 2.下载谷歌驱chromedriever => https://chromedriver.storage.googleapis.com/index.html
 # 3.把下载的chromedriver放到/usr/local/bin/ => sudo mv chromedriver /usr/local/bin/  3.01：windows下放入谷歌浏览器的Application目录下，
