@@ -3,9 +3,9 @@ import time
 import os
 
 file_txt = open('test.txt')
-csv_name = file_txt.read().split(',')[0]
+csv_name = file_txt.read().split(',')[0].strip()
 file_txt = open('test.txt')
-file_list = file_txt.read().split(',')[1]
+file_list = file_txt.read().split(',')[1].strip()
 # 读取csv文件
 csv_file = csv.reader(open(csv_name,'r'))
 # # 遍历文件内容
