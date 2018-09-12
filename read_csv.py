@@ -2,6 +2,7 @@ import csv
 import time
 import os
 
+# 同级目录新建一个text.txt文本，内容以逗号隔开
 file_txt = open('test.txt')
 csv_name = file_txt.read().split(',')[0].strip()
 file_txt = open('test.txt')
