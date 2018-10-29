@@ -33,8 +33,7 @@ for x in csv_file:
 					
 					
 					
-					
-					
+										
 					
 # coding = utf-8
 import os
