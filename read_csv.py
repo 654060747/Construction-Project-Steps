@@ -30,6 +30,45 @@ for x in csv_file:
 					os.rename('./'+file_list+'/'+temp+'/'+one_file,'./'+file_list+'/'+temp+'/'+new_name)
 
 					
+
+					
+					
+					
+					
+					
+import csv
+import time
+import os
+
+# csv路径
+csv_path = "./樱花.csv"
+# 读取csv文件
+csv_file = csv.reader(open(csv_path,'r'))
+
+# 设置一个集合
+# 注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+# xxx in data 判断xxx是否在集合中存在
+data = set()
+# 循环文件所有内容
+for line in csv_file:
+	
+	# 循环每一行内容
+	for line_one in line:
+		# 把每一行内容放到集合里
+		# data.add(line_one)
+		print(line_one)
+		
+	# print(data)
+	# # 循环每一行集合数据
+	# for su in data:
+	# 	print(su)
+	# # 清空集合
+	# data.clear()				
+					
+					
+					
+					
+					
 					
 					
 					
