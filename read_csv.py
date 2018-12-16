@@ -85,8 +85,6 @@ original_name = "零拾"
 # 年与月之间修改后的名字
 make_name = "壹拾"
 
-
-
 file_name = os.listdir(root_path)
 # 遍历文件内容
 for name in file_name:
@@ -103,4 +101,35 @@ for name in file_name:
 
 	except Exception as e:
 		print("====缺少年月===="+name)
+
+		
+		
+
 	
+	
+	
+		
+#世纪佳缘线程下载
+s_id = int(configs.user_start_id)
+e_id = int(configs.user_end_id)
+
+
+class MyThread(threading.Thread):
+    """docstring for MyThread"""
+    def __init__(self, arg):
+        super(MyThread, self).__init__()
+        self.arg = arg
+      
+    def run(self):
+        
+        # print(i)
+        visit_page(self.arg, proxies[0])
+        
+
+for i in range(s_id, e_id):
+    thread = MyThread(str(i))
+    thread.start()	
+		
+		
+		
+		
