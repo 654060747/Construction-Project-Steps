@@ -1,0 +1,52 @@
+# codeing:utf-8
+import time,os,re
+
+
+root_path = ".\\ws_fast"
+
+# task_xxx需要出现的层级位置
+start_task_level = 4
+end_task_level = 4
+# 目录开头
+header_field = "task_"
+
+
+def check_dir(root_path,start_task_level,end_task_level,header_field):
+
+	a = []
+	b = []
+	for root,dirs,files in os.walk(root_path):
+		for current_dir in dirs:
+			b.append(os.path.join(root,current_dir))
+			r = header_field+"\\w*"                             
+			res=re.search(r,current_dir)
+			if res:
+				target_path = os.path.join(root,current_dir)
+				a.append(target_path)
+				target_count = len(target_path.split("\\"))-1
+				if target_count < start_task_level or target_count > end_task_level:
+					print("有"+header_field+"目录但层级不对Error dir::"+target_path)
+	print(b)
+	print(a)
+	for x in b:
+		if x not in a:
+			print(x)
+		
+			
+
+
+check_dir(root_path,start_task_level,end_task_level,header_field)
+
+
+
+
+
+
+
+
+# from os.path import join,getsize
+# def getdirsize(dir):
+#     size = 0 
+#     for root,dirs,files in os.walk(dir):
+#         size += sum([getsize(join(root,name))for name in files])
+#     return size
