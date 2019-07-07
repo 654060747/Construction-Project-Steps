@@ -4,38 +4,94 @@ import time,os,re
 
 root_path = ".\\ws_fast"
 
-# task_xxx需要出现的层级位置
+# 必有目录部分
+target_dir = "task_"
+# 必有目录需要出现的层级位置
 start_task_level = 4
 end_task_level = 4
-# 目录开头
-header_field = "task_"
+# 必有文件
+target_file = "readme.md"
+# 必有文件必有的字段
+by_name = "by"
+create_data = "create_data"
+check_data = "check_data"
+log = "log"
 
 
-def check_dir(root_path,start_task_level,end_task_level,header_field):
 
-	a = []
-	b = []
+
+def check_file(root_path):
+	for root,dirs,files in os.walk(root_path):
+
+		if target_file in files:
+
+			target_file_dir = root+"\\"+target_file
+			with open(target_file_dir , 'r') as f:
+				data = f.read()
+
+				# if by_name not in data:
+				# 	print("少字段"+by_name+"::"+target_file_dir)
+				# if create_data not in data:
+				# 	print("少字段"+create_data+"::"+target_file_dir)
+				# if check_data not in data:
+				# 	print("少字段"+check_data+"::"+target_file_dir)
+				# if log not in data:
+				# 	print("少字段"+log+"::"+target_file_dir)
+
+				if by_name not in data or create_data not in data or check_data not in data or log not in data:
+					print("目标文件少字段::"+target_file_dir)
+
+				# res = re.split(r':|\n+|\r+',data)
+				# for x in range(0,len(res)):
+				# 	if x%2==0:
+				# 		print(res[x])
+
+				f.close()
+
+		else:
+			all_root = []
+			for current_file in files:
+				if root not in all_root:
+					all_root.append(root)
+			# time.sleep(0.1)
+			for one_root in all_root:
+				print(target_file+"文件没有找到"+"Errror dir::"+one_root)
+
+
+
+
+
+def check_dir(root_path,start_task_level,end_task_level,target_dir):
+
+	# 存放必有目录路径
+	target_paths = ""
+	# 存放所有目录路径
+	all_paths = ""
 	for root,dirs,files in os.walk(root_path):
 		for current_dir in dirs:
-			b.append(os.path.join(root,current_dir))
-			r = header_field+"\\w*"                             
+			r = target_dir+"\\w*"                             
 			res=re.search(r,current_dir)
 			if res:
 				target_path = os.path.join(root,current_dir)
-				a.append(target_path)
+				target_paths = target_paths + target_path + ";"
 				target_count = len(target_path.split("\\"))-1
 				if target_count < start_task_level or target_count > end_task_level:
-					print("有"+header_field+"目录但层级不对Error dir::"+target_path)
-	print(b)
-	print(a)
-	for x in b:
-		if x not in a:
-			print(x)
-		
-			
+					print("有"+target_dir+"目录但层级不对Error dir::"+target_path)
+			else:
+				all_paths = all_paths+os.path.join(root,current_dir)+";"
 
 
-check_dir(root_path,start_task_level,end_task_level,header_field)
+
+	# print(target_paths)
+	# print(all_paths)
+	for one_path in all_paths.split(";"):
+		if one_path not in target_paths:
+			print(one_path)
+				
+
+
+check_dir(root_path,start_task_level,end_task_level,target_dir)
+check_file(root_path)
 
 
 
