@@ -1,5 +1,6 @@
 # codeing:utf-8
-import time,os,re
+import time,os,re,datetime
+from dateutil.parser import parse
 
 
 root_path = ".\\ws_fast"
@@ -7,60 +8,104 @@ root_path = ".\\ws_fast"
 # 必有目录部分
 target_dir = "task_"
 # 必有目录需要出现的层级位置
-start_task_level = 4
+start_task_level = 3
 end_task_level = 4
 # 必有文件
 target_file = "readme.md"
 # 必有文件必有的字段
 by_name = "by"
-create_data = "create_data"
-check_data = "check_data"
+create_date = "create_date"
+check_date = "check_date"
 log = "log"
+# 存放数据目录
+storage_data_dir = "data_"
+# 设置文件修改的最长时间
+max_commit_time = 30
+# 限制个人空间大小
+max_res_dir = 100
 
 
 
+# 获取个人文件夹大小(目录、限制个人空间大小2个参数)
+def getdirsize(target_path,max_res_dir):
+    size = 0 
+    for root,dirs,files in os.walk(target_path):
+        size += sum([os.path.getsize(os.path.join(root,name))for name in files])
 
-def check_file(root_path):
+    dir_size = size/1024/1024
+    if dir_size > max_res_dir:
+    	print("个人文件"+str(dir_size)+"MB已超过限制的"+str(max_res_dir)+"MB目录为"+target_path)
+
+
+
+#文件创建时间与修改时间有没有超过限定时间(目录、创建时间、最长的修改时间3个参数)
+def check_time(root_time_dir,start_date,max_commit_time):
+
+	date = os.stat(root_time_dir).st_mtime
+	m_time = time.localtime(date)
+	end_date = str(m_time.tm_year)+"-"+str(m_time.tm_mon)+"-"+str(m_time.tm_mday)
+	# 可以把任何格式日期start_date转换为指定格式 parse(start_date).strftime('%Y-%m-%d')
+	d_start = datetime.datetime.strptime(parse(start_date).strftime('%Y-%m-%d'), '%Y-%m-%d')
+	d_end = datetime.datetime.strptime(end_date, '%Y-%m-%d')
+	time_value = d_end - d_start
+	if time_value.days > max_commit_time:
+		print("文件夹超过"+str(max_commit_time)+"天是否转移"+root_time_dir)
+
+
+
+# 检查文件并读取文件内容(目录、必有文件、及必有文件需要内容字段等参数)
+def check_file(root_path,target_file,by_name,create_date,check_date,log):
 	for root,dirs,files in os.walk(root_path):
 
 		if target_file in files:
-
+			# 开始读取必有文件内容
 			target_file_dir = root+"\\"+target_file
 			with open(target_file_dir , 'r') as f:
 				data = f.read()
 
+				# 检测必有文件内容是否缺少字段
 				# if by_name not in data:
 				# 	print("少字段"+by_name+"::"+target_file_dir)
-				# if create_data not in data:
-				# 	print("少字段"+create_data+"::"+target_file_dir)
-				# if check_data not in data:
-				# 	print("少字段"+check_data+"::"+target_file_dir)
+				# if create_date not in data:
+				# 	print("少字段"+create_date+"::"+target_file_dir)
+				# if check_date not in data:
+				# 	print("少字段"+check_date+"::"+target_file_dir)
 				# if log not in data:
 				# 	print("少字段"+log+"::"+target_file_dir)
 
-				if by_name not in data or create_data not in data or check_data not in data or log not in data:
-					print("目标文件少字段::"+target_file_dir)
+				if by_name not in data or create_date not in data or check_date not in data or log not in data:
+					print("目标文件少字段"+target_file_dir)
 
+				# 读取必有文件每项内容
 				# res = re.split(r':|\n+|\r+',data)
 				# for x in range(0,len(res)):
 				# 	if x%2==0:
 				# 		print(res[x])
 
+				# 读取必有文件创建的时间
+				# r = create_date + "\s*:\s*\d{2,4}(\-|\/|.|_)\d{1,2}(\-|\/|.|_)\d{1,2}"
+				r = create_date + "\s*:\s*(\d{2,4}.?\d{1,2}.?\d{1,2})"
+				res = re.findall(re.compile(r),data)
+				start_date = res[0]
+				# 需要修改优化
+				root_time_dir = root +"\\"+ storage_data_dir
+				check_time(root_time_dir,start_date,max_commit_time)
+
 				f.close()
 
 		else:
+			# 检测缺少必有文件目录并且做去重处理
 			all_root = []
 			for current_file in files:
 				if root not in all_root:
 					all_root.append(root)
 			# time.sleep(0.1)
 			for one_root in all_root:
-				print(target_file+"文件没有找到"+"Errror dir::"+one_root)
+				print(target_file+"文件没有找到"+one_root)
 
 
 
-
-
+# 检查目录并调用方法检查个人的必有目录是否超过限制大小(目录、必有目录的开始与结束出现的层级、必有目录统一的前缀4个参数)
 def check_dir(root_path,start_task_level,end_task_level,target_dir):
 
 	# 存放必有目录路径
@@ -75,34 +120,28 @@ def check_dir(root_path,start_task_level,end_task_level,target_dir):
 				target_path = os.path.join(root,current_dir)
 				target_paths = target_paths + target_path + ";"
 				target_count = len(target_path.split("\\"))-1
+				# 把存在必有目录但层级不对检测出来
 				if target_count < start_task_level or target_count > end_task_level:
-					print("有"+target_dir+"目录但层级不对Error dir::"+target_path)
+					print("有"+target_dir+"目录但层级不对"+target_path)
+
+				else:
+					# 调用方法
+					getdirsize(target_path,max_res_dir)
+					
 			else:
 				all_paths = all_paths+os.path.join(root,current_dir)+";"
 
-
-
 	# print(target_paths)
 	# print(all_paths)
+	# 把不存在必有目录的路径检测出来
 	for one_path in all_paths.split(";"):
-		if one_path not in target_paths:
-			print(one_path)
-				
+		if one_path not in target_paths and target_dir not in one_path:
+			print("没有"+target_dir+"目录"+one_path)
+	
+
 
 
 check_dir(root_path,start_task_level,end_task_level,target_dir)
-check_file(root_path)
+check_file(root_path,target_file,by_name,create_date,check_date,log)
 
 
-
-
-
-
-
-
-# from os.path import join,getsize
-# def getdirsize(dir):
-#     size = 0 
-#     for root,dirs,files in os.walk(dir):
-#         size += sum([getsize(join(root,name))for name in files])
-#     return size
