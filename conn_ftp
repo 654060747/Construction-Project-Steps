@@ -68,3 +68,178 @@ def download_file(remote_file_name):
         print(str(e))
 
 download_file(remote_file_name)
+
+
+
+
+
+
+
+
+
+# -*- coding:utf-8 -*-
+import ftplib
+import os
+import socket
+from ftplib import FTP
+
+#设置FTP连接信息
+host = '106.14.209.38'
+ftp_prot = 21
+#FTP用户名
+user = 'ykftp'
+#FTP密码
+passwd = 'emdata2018'
+# 服务器路径
+remotepath = "/home/ykftp/IP DOME"
+filename = "test"
+# 下载到本地路径
+localpath = "./ftp/"
+# 设置缓冲区大小
+buffer_size = 1024
+
+ftp_timeout = 30
+# 创建目录
+def checkFolder(folder):
+	if not os.path.exists(folder):
+		os.makedirs(folder)
+
+# 写csv数据
+def write_file(data):
+	with open(new_csv, 'a+') as f:
+		writer = f.write(data+'\n')
+	pass
+
+
+def ftpconnect(host, username, password):
+	ftp = FTP() # 设置变量
+	timeout = ftp_timeout
+	port = ftp_prot
+	ftp.connect(host, port, timeout) # 连接FTP服务器
+	ftp.login(username,password) # 登录
+	return ftp
+# def downloadfile(ftp, remotepath, localpath):
+# 	ftp.cwd(remotepath)
+# 	list_file = ftp.nlst() # 获取目录下的文件,获得目录列表
+# 	list_dir = ftp.dir() # 获取目录下的文件,获得目录列表
+# 	print(list_file)
+# 	print(list_dir)
+# 	# for name in list:
+	# 	print(name)
+		# path = localpath + name # 定义文件保存路径
+		# # f = open(path, 'wb') # 打开要保存文件
+		# # filename = 'RETR ' + name # 保存FTP文件
+		# # ftp.set_debuglevel(0)         #关闭调试
+		# try:
+		# 	with open(path, "wb") as f:
+		# 		ftp.retrbinary('RETR {0}'.format(remotepath), f.write, buffer_size)
+		# 		f.close()
+		# except:
+		# 	print('savefail\t%s' % remotepath)     
+
+# # 下载文件
+# def downloadfile(ftp, localfile, remotefile):
+#     file_handler = open(localfile, 'wb')
+#     print(file_handler)
+#     ftp.retrbinary('RETR ' + remotefile, file_handler.write)
+#     file_handler.close()
+#     return True
+
+# 下载目录(与ftp文件目录一致)
+def downloaddir(ftp, remotepath, localpath):
+	checkFolder(localpath)
+	ftp.cwd(remotepath)
+	RemoteNames = ftp.nlst()
+	print("RemoteNames", RemoteNames)
+	# for file in RemoteNames:
+	#     local = os.path.join(localpath, file)
+	#     print(ftp.nlst(file))
+	#     if file.find(".") == -1:
+	# 		checkFolder(local)
+	#         downloaddir(ftp, local, file)
+	#     else:
+	#         downloadfile(ftp, local, file)
+	# ftp.cwd("..")
+	return
+
+# 删除文件
+def delftpfile(ftp,remotepath):
+	ftp.cwd(remotepath)
+	RemoteNames = ftp.nlst()
+	for file in RemoteNames:
+		ftp.delete(file)
+		print("删除成功"+file)
+
+
+
+def search_file(ftp, start_dir):
+	ftp.cwd(start_dir)
+	
+	dir_res = []
+	ftp.dir('.', dir_res.append)   #对当前目录进行dir()，将结果放入列表
+	for i in dir_res:
+		if i.startswith("d"):
+			global sum1 
+			sum1 += 1
+			search_file(ftp.pwd()+"/"+i.split(" ")[-1])
+			ftp.cwd('..')
+		else:
+			global sum2, value
+			sum2 += 1
+			val = i.split(" ")[-1]
+			value += ftp.size(val)
+			if ftp.pwd().endswith('/'):              
+#                print ftp.pwd()+val+"     "+str(ftp.size(val))+" B"   #打印出每个文件路径和大小
+				 pass
+			else:             
+#                print ftp.pwd()+"/"+val+"     "+str(ftp.size(val))+" B"
+				 pass
+		
+
+
+def get_dirs(ftp, *args):
+	cmd = 'LIST'
+	func = None
+	if args[-1:] and type(args[-1]) != type(''):
+		args, func = args[:-1], args[-1]
+	for arg in args:
+		cmd = cmd + (' ' + arg)
+	folders = []
+	dict={}
+	ftp.retrlines(cmd, folders.append)
+	long=len(folders)
+	while long>0:
+		long=long-1
+		dict[(folders[long])[62:]]=(folders[long])[:61]
+	return dict
+
+# 链接ftp
+def connect_ftp():
+
+	# ftp = FTP()
+	# ftp.set_debuglevel(2)
+	ftp = ftpconnect(host, user, passwd)
+	# ftp.connect(host=host, port=port)
+	# ftp.login(user=user, passwd=passwd)
+	print("登录成功*******已经成功连接服务器FTP服务！！！")
+	# print(ftp.welcome)
+	print(ftp.pwd())
+	print(ftp)
+	# lst = ftp.getdirs()  # 返回目录下文件夹和文件列表
+	# print(lst)
+	# search_file(ftp, ftp.pwd())
+	dir_res = get_dirs(ftp)
+	# ftp.dir('.', dir_res.append)
+	print(dir_res)
+
+	# downloaddir(ftp,remotepath,localpath)
+	# downloadfile(ftp,remotepath,localpath)
+	
+
+connect_ftp()
+
+
+
+
+
+
