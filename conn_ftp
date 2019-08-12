@@ -84,14 +84,14 @@ import socket
 from ftplib import FTP
 
 #设置FTP连接信息
-host = '106.14.209.38'
+host = '22222.22.22'
 ftp_prot = 21
 #FTP用户名
-user = 'ykftp'
+user = ''
 #FTP密码
-passwd = 'emdata2018'
+passwd = ''
 # 服务器路径
-remotepath = "/home/ykftp/IP DOME"
+remotepath = "/home/fjdal/"
 filename = "test"
 # 下载到本地路径
 localpath = "./ftp/"
