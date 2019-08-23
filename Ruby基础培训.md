@@ -139,8 +139,10 @@ rails db:migrate
 ### 查看Ruby版本:
 > ruby -v
 
-### 安装Rails:
+### 安装libx
 > sudo apt-get install libxml2-dev libxslt-dev
+
+### 安装Rails:
 > gem install rails
 
 ### 查看Rails版本：
