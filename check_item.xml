@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Items>
+  <City>5204</City>
+  <ZhuCongYiZhi>0</ZhuCongYiZhi>
+  <GongZuoShiJian>
+    <KaiShi>6</KaiShi>
+    <JieShu>21</JieShu>
+  </GongZuoShiJian>
+  <JianYanLeiBie>
+	<LeiBie>01</LeiBie>
+  </JianYanLeiBie>
+  <ShiYongXingZhi>A</ShiYongXingZhi>
+  <CheLiangZhongLei>K31,K32,K33,K34,K41,K42,K43</CheLiangZhongLei>
+  <JianYanJiGou>
+  </JianYanJiGou>
+  <ZhaoPian>
+    <ZuoQianFang number = "0111">
+      <ChePai>on</ChePai>
+      <CheBiao>on</CheBiao>
+      <SanJiaoJia>on</SanJiaoJia>
+      <GaiZhuang>off</GaiZhuang>
+      <DangAn>off</DangAn>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+	  <ZuoCeFangHu>off</ZuoCeFangHu>
+	  <ZuoCePenTu>off</ZuoCePenTu>
+	  <CheShenFanGuangBiaoShi>off</CheShenFanGuangBiaoShi> 
+    </ZuoQianFang>
+	<ZuoFang number = "0175">
+	  <ChePai>off</ChePai>
+	  <GaiZhuang>on</GaiZhuang>
+	  <GuangGao>on</GuangGao>
+	</ZuoFang>
+    <YouHouFang number = "0112">
+      <ChePai>on</ChePai>
+      <CheBiao>on</CheBiao>
+      <SanJiaoJia>off</SanJiaoJia>
+      <GaiZhuang>off</GaiZhuang>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+      <PaiQiKong>off</PaiQiKong>
+	  <YouCeFangHu>off</YouCeFangHu>
+	  <HouBuPenTu>off</HouBuPenTu>
+	  <LanBanGaoDu>off</LanBanGaoDu>
+	  <HouXiaFangHu>off</HouXiaFangHu>
+	  <CheLiangWeiBuBiaoZhiBan>off</CheLiangWeiBuBiaoZhiBan>
+	  <HouBuCheShenFanGuangBiaoShi>off</HouBuCheShenFanGuangBiaoShi>
+	  <YouCeCheShenFanGuangBiaoShi>off</YouCeCheShenFanGuangBiaoShi>
+    </YouHouFang>
+    <CheJiaHao number = "0113">
+      <CheJiaHao>on</CheJiaHao>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+      <DangAn>off</DangAn>
+      <TaYinMo>off</TaYinMo>
+      <BaoDing_FTP>off</BaoDing_FTP>
+      <JiLuBiaoZiMo>off</JiLuBiaoZiMo>
+	  <YuanJing>off</YuanJing>
+    </CheJiaHao>
+    <AnQuanDai number = "0157">
+      <AnQuanDai>on</AnQuanDai>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+    </AnQuanDai>
+    <XingShiZheng number = "0201">
+      <CheJiaHao>on</CheJiaHao>
+      <ChePai>on</ChePai>
+      <BianHao>on</BianHao>
+      <FaZhengRiQi>on</FaZhengRiQi>
+      <BeiMian>on</BeiMian>
+	  <ShenFenZheng>off</ShenFenZheng>
+	  <TianJin>off</TianJin>
+	  <CheLiang>off</CheLiang>
+    </XingShiZheng>
+    <XingShiZhengBeiMian number = "0214">
+      <ZhuYe>on</ZhuYe>
+	  <FuYe>on</FuYe>
+	  <YouXiaoQi>on</YouXiaoQi>
+	  <ShenFenZheng>on</ShenFenZheng>
+    </XingShiZhengBeiMian>
+    <JiaoQiangXian number = "0203">
+      <FuBen>off</FuBen>
+      <ChePai>off</ChePai>
+      <ChaoJian>off</ChaoJian>
+      <CheJiaHao>on</CheJiaHao>
+      <YouXiaoQi>on</YouXiaoQi>
+      <GongZhang>on</GongZhang>
+      <CheChuanShui>on</CheChuanShui>
+      <DianZiBaoDan>off</DianZiBaoDan>
+      <FaDongJiHao>off</FaDongJiHao>
+	  <SuZhouYinZhang>off</SuZhouYinZhang>
+	  <ShenZhenDianZiBaoDan>off</ShenZhenDianZiBaoDan>
+    </JiaoQiangXian>
+	<JianYanBaoGao number = "0254">
+	  <ChePai>on</ChePai>
+	  <CheJiaHao>on</CheJiaHao>
+	  <QianMing>on</QianMing>
+	  <YinZhang>on</YinZhang>
+	  <JieLun>on</JieLun>
+	  <ShuJuXiang>on</ShuJuXiang>
+	  <YinZhang_MA>off</YinZhang_MA>
+	  <QueRenZhang>off</QueRenZhang>
+	  <HaoPaiZhongLei>off</HaoPaiZhongLei>
+	</JianYanBaoGao>
+	<JianYanBaoGao_YiQi number = "0204">
+	  <YiQi>on</YiQi>
+	  <HongZhang>on</HongZhang>
+	  <JieLun>off</JieLun>
+	  <ChePai>on</ChePai>
+	  <QianMing>off</QianMing>
+	  <YinZhang_MA>off</YinZhang_MA>
+	  <CheJiaHao>on</CheJiaHao>
+	</JianYanBaoGao_YiQi>
+	<JianYanBaoGao_RenGong number = "0297">
+	  <ChePai>on</ChePai>
+	  <ChaYanJieLun>on</ChaYanJieLun>
+	  <DiPanQianZi>on</DiPanQianZi>
+	  <WaiGuanQianZi>on</WaiGuanQianZi>
+	  <YinCheQianZi>off</YinCheQianZi>
+	</JianYanBaoGao_RenGong>
+    <WeiTuoShu number = "0208">
+      <WeiTuoShu>off</WeiTuoShu>
+      <HongZhang>off</HongZhang>
+	  <ShenFenZheng>off</ShenFenZheng>
+    </WeiTuoShu>
+    <ShenQingBiao number = "0202">
+      <ShouJi_BenRen>on</ShouJi_BenRen>
+      <ShouJi_DaiLi>off</ShouJi_DaiLi>
+      <ChePai>on</ChePai>
+      <CheJiaHao>off</CheJiaHao>
+      <QianMing>on</QianMing>
+      <YinZhang>off</YinZhang>
+	  <is_CheLiangType>on</is_CheLiangType>
+	  <is_YouBian>off</is_YouBian>
+	  <is_DiZhi>off</is_DiZhi>
+	  <XingMing>on</XingMing>
+	  <HaoPaiZhongLei>on</HaoPaiZhongLei>
+	  <JianYanHeGeBiaoZhi>off</JianYanHeGeBiaoZhi>
+    </ShenQingBiao>
+    <WeiQiJianYan number = "0209">
+      <JieLun>on</JieLun>
+      <ChePai>on</ChePai>
+      <CheJiaHao>on</CheJiaHao>
+      <YinZhang>on</YinZhang>
+      <QianMing>on</QianMing>
+      <YinZhang_MA>off</YinZhang_MA>
+	  <YouXiaoQi>off</YouXiaoQi>
+      <CaoZuoYuan>off</CaoZuoYuan>
+      <JiaShiYuan>off</JiaShiYuan>
+      <PiZhunRen>off</PiZhunRen>
+      <ShenHeYuan>off</ShenHeYuan>
+	  <DianZiBiaoGe>off</DianZiBiaoGe>
+	  <JianCeShiJian>off</JianCeShiJian>
+	  <FaDongJiBianHao>off</FaDongJiBianHao>
+	  <DianZiBaoGao>off</DianZiBaoGao>
+    </WeiQiJianYan>
+    <ZuoDengGuang number = "0321">
+      <ZuoQianDeng>on</ZuoQianDeng>
+      <YouQianDeng>off</YouQianDeng>
+      <ChePai>on</ChePai>
+      <QianMian>on</QianMian>
+	  <ShuiYinRiQi>off</ShuiYinRiQi>
+    </ZuoDengGuang>
+    <YouDengGuang number = "0352">
+      <ZuoQianDeng>off</ZuoQianDeng>
+      <YouQianDeng>on</YouQianDeng>
+      <ChePai>on</ChePai>
+      <QianMian>on</QianMian>
+	  <ShuiYinRiQi>off</ShuiYinRiQi>
+    </YouDengGuang>
+    <YiZhouZhiDong number = "0322">
+      <QianLun>on</QianLun>
+      <ChePai>on</ChePai>
+	  <ShuiYinRiQi>off</ShuiYinRiQi>
+    </YiZhouZhiDong>
+    <ErZhouZhiDong number = "0348">
+      <HouLun>on</HouLun>
+      <ChePai>on</ChePai>
+	  <ShuiYinRiQi>off</ShuiYinRiQi>
+    </ErZhouZhiDong>
+    <ZhuCheZhiDong number = "0351">
+      <ChePai>on</ChePai>
+	  <CheLun>on</CheLun>
+	  <ShuiYinRiQi>off</ShuiYinRiQi>
+    </ZhuCheZhiDong>
+    <DiPanDongTaiKaiShi number = "0344">
+      <ChePai>on</ChePai>
+      <YiDong>off</YiDong>
+	  <BiaoZhi>off</BiaoZhi>
+	  <ChePaiQueDing>off</ChePaiQueDing>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+    </DiPanDongTaiKaiShi>
+    <DiPanDongTaiJieShu number = "0342">
+      <ChePai>on</ChePai>
+      <YiDong>off</YiDong>
+	  <BiaoZhi>off</BiaoZhi>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+    </DiPanDongTaiJieShu>
+    <DiPanBuJian number = "0323">
+      <GongWei>on</GongWei>
+      <ChePai>off</ChePai>
+      <ShuiYinRiQi>off</ShuiYinRiQi>
+      <Ren>on</Ren>
+    </DiPanBuJian>
+    <ChaYanJiLu number = "0205">
+      <JianYanBiao>on</JianYanBiao>
+      <ChaYanXinXi>off</ChaYanXinXi>
+      <ChePai>on</ChePai>
+      <CheJiaHao>off</CheJiaHao>
+      <ChaYanQianZi>on</ChaYanQianZi>
+      <ChaYanJieLun>on</ChaYanJieLun>
+      <WaiGuanQianZi>off</WaiGuanQianZi>
+      <YinCheQianZi>off</YinCheQianZi>
+      <DiPanQianZi>off</DiPanQianZi>
+	  <HongZhang>off</HongZhang>
+    </ChaYanJiLu>
+    <QianHaoPai number = "0167">
+	  <ChePai>on</ChePai>
+	</QianHaoPai>
+	<HouHaoPai number = "0168">
+	  <ChePai>on</ChePai>
+	</HouHaoPai>
+	<ShenFenZheng number = " ">
+	  <ShenFenZheng>off</ShenFenZheng>
+	</ShenFenZheng>
+	<ShenFenZhengBeiMian number = " ">
+	  <ShenFenZheng>off</ShenFenZheng>
+	  <YouXiaoQi>off</YouXiaoQi>
+	</ShenFenZhengBeiMian>
+	<JianYanBiaoBeiMian number = " ">
+      <JianYanBiaoBeiMian>off</JianYanBiaoBeiMian>
+      <DiPan>on</DiPan>
+      <WaiGuan>on</WaiGuan>
+      <YinChe>off</YinChe>
+    </JianYanBiaoBeiMian>
+    <WanShuiZhengMing number = "0206">
+      <CheJiaHao>on</CheJiaHao>
+      <SuoShuRiQi>on</SuoShuRiQi>
+	  <ChePai>off</ChePai>
+	  <CheChuanShui>off</CheChuanShui>
+	  <JianCeRiQi>off</JianCeRiQi>
+	  <BaoXianDan>off</BaoXianDan>
+    </WanShuiZhengMing>
+    <WeiTuoTongZhiShu number = " ">
+      <WeiTuoTongZhiShu>on</WeiTuoTongZhiShu>
+      <ChePai>on</ChePai>
+      <CheJiaHao>on</CheJiaHao>
+      <YinZhang>on</YinZhang>
+    </WeiTuoTongZhiShu>
+	<MieHuoQi number = " ">
+	  <MieHuoQi>off</MieHuoQi>
+	  <YaLiBiao>off</YaLiBiao>
+	</MieHuoQi>
+	<YingJiChui number = " ">
+	  <YingJiChui>off</YingJiChui>
+	</YingJiChui>
+	<JiLuYi number = " ">
+	  <JiLuYi>off</JiLuYi>
+	  <RenZheng>off</RenZheng>
+	  <PingMu>off</PingMu>
+	</JiLuYi>
+	<ZuoQianLun number = " ">
+	  <LunTai>off</LunTai>
+	</ZuoQianLun>
+	<YouQianLun number = " ">
+	  <LunTai>off</LunTai>
+	</YouQianLun>
+	<CheXiang number = " ">
+	  <GaiZhuang>off</GaiZhuang>
+	  <FengDing>off</FengDing>
+	  <ZuoWei>off</ZuoWei>
+	  <CheLiangLeiXing>off</CheLiangLeiXing>
+	  <JiaoDu>off</JiaoDu>
+	</CheXiang>
+	<CeHuaGongWei number = " ">
+	  <ChePai>off</ChePai>
+	</CeHuaGongWei>
+	<WaiKuoQianMian number = " ">
+	  <ChePai>off</ChePai>
+	</WaiKuoQianMian>
+	<WaiKuoCeMian number = " ">
+	  <ChePai>off</ChePai>
+	</WaiKuoCeMian>
+	<DaCheHaoPai number = " ">
+	  <ChePai>off</ChePai>
+	</DaCheHaoPai>
+	<WeiXiangNeiBu number = " ">
+	  <GaiZhuang>off</GaiZhuang>
+	</WeiXiangNeiBu>
+	<FuZhuZhiDong number = " ">
+	  <FuZhuZhiDong>off</FuZhuZhiDong>
+	</FuZhuZhiDong>
+	<ABS number = " ">
+	  <ABS>off</ABS>
+	</ABS>
+	<CheLiangCeMian number = " ">
+	  <CheLiangCeMian>off</CheLiangCeMian>
+	</CheLiangCeMian>
+	<CheLiangBeiMian number = " ">
+	  <CheLiangBeiMian>off</CheLiangBeiMian>
+	  <ChePai>off</ChePai>
+	  <CheBiao>off</CheBiao>
+	  <SanJiaoJia>off</SanJiaoJia>
+	  <XiaBuFangHu>off</XiaBuFangHu>
+	  <WeiBuBiaoZhi>off</WeiBuBiaoZhi>
+	  <PenTuHaoMa>off</PenTuHaoMa>
+	  <CheShenFanGuangBiaoShi>off</CheShenFanGuangBiaoShi>
+	</CheLiangBeiMian>
+	<HeDingZaiKe number = " ">
+	  <HeDingZaiKe>off</HeDingZaiKe>
+	</HeDingZaiKe>
+	<JianCeQuXianBaoGao number = " ">
+	  <QuXianBaoGao>off</QuXianBaoGao>
+	  <ChePai>off</ChePai>
+	  <YinZhang>off</YinZhang>
+	</JianCeQuXianBaoGao>
+	<CheJiaHaoUG number = " ">
+	  <CheJiaHao>off</CheJiaHao>
+	</CheJiaHaoUG>
+	<CheLiangMingPai number = " ">
+	  <CheJiaHao>off</CheJiaHao>
+	  <FaDongJiHao>off</FaDongJiHao>
+	  <FaDongJiPaiLiang>off</FaDongJiPaiLiang>
+	  <ZhiZaoNianYue>off</ZhiZaoNianYue>
+	</CheLiangMingPai>
+  </ZhaoPian>
+  <ShiPin>
+    <ZuoQianFang>
+      <ChePai>on</ChePai>
+    </ZuoQianFang>
+    <YouHouFang>
+      <ChePai>on</ChePai>
+    </YouHouFang>
+    <YiZhouZhiDong>
+      <ChePai>on</ChePai>
+      <QianLun>on</QianLun>
+      <WeiDeng>on</WeiDeng>
+      <Ren>on</Ren>
+    </YiZhouZhiDong>
+    <ErZhouZhiDong>
+      <ChePai>on</ChePai>
+      <HouLun>on</HouLun>
+      <WeiDeng>on</WeiDeng>
+      <Ren>on</Ren>
+    </ErZhouZhiDong>
+    <ZuoDengGuang>
+      <ChePai>on</ChePai>
+      <QianDaDeng>on</QianDaDeng>
+      <Ren>on</Ren>
+      <CeShiYi>on</CeShiYi>
+    </ZuoDengGuang>
+    <YouDengGuang>
+      <ChePai>on</ChePai>
+      <QianDaDeng>on</QianDaDeng>
+      <Ren>on</Ren>
+      <CeShiYi>on</CeShiYi>
+    </YouDengGuang>
+    <DongTaiGongWei_1>
+      <ChePai>on</ChePai>
+      <WeiYi>on</WeiYi>
+    </DongTaiGongWei_1>
+    <DongTaiGongWei_2>
+      <ChePai>on</ChePai>
+      <WeiYi>on</WeiYi>
+    </DongTaiGongWei_2>
+    <DiPanGongWei>
+      <Ren>on</Ren>
+    </DiPanGongWei>
+    <ZhuCheZhiDong_GunTong>
+      <ChePai>on</ChePai>
+      <HouLun>on</HouLun>
+      <TaiQi>on</TaiQi>
+      <Ren>on</Ren>
+    </ZhuCheZhiDong_GunTong>
+    <ZhuCheZhiDong_PingBan>
+      <ChePai>on</ChePai>
+      <CheLun>on</CheLun>
+      <WeiDeng>on</WeiDeng>
+      <Ren>on</Ren>
+    </ZhuCheZhiDong_PingBan>
+    <WeiXiangNeiBu>
+      <GaiZhuang>on</GaiZhuang>
+    </WeiXiangNeiBu>
+  </ShiPin>
+  <SuzhouVideo>
+     <SpaoConnect>
+	   <soapflag>off</soapflag>
+	 </SpaoConnect>
+     <Download>
+        <dlflag>off</dlflag>	
+	</Download>
+     <V_CheLiangZuoQianFang>
+       <ChePai>on</ChePai> 
+     </V_CheLiangZuoQianFang>
+      <V_CheLiangYouHouFang>
+       <ChePai>on</ChePai> 
+     </V_CheLiangYouHouFang>
+     <V_YiZhouZhiDong>
+       <ChePai>on</ChePai>
+       <WeiDeng>on</WeiDeng>
+       <QianLun>on</QianLun>
+       <Ren>on</Ren> 
+     </V_YiZhouZhiDong>
+     <V_ErZhouZhiDong>
+       <ChePai>on</ChePai>
+       <HouLun>on</HouLun>
+       <WeiDeng>on</WeiDeng>
+       <Ren>on</Ren> 
+     </V_ErZhouZhiDong>
+     <V_PingBanZhiDong>
+       <ChePai>on</ChePai>
+       <PingBan>on</PingBan>
+       <WeiDeng>on</WeiDeng>
+       <Ren>on</Ren> 
+     </V_PingBanZhiDong>
+     <V_ZuoDengGuang>
+       <ChePai>on</ChePai>
+       <CeShiYi>on</CeShiYi>
+       <QianDaDeng>on</QianDaDeng>
+       <Ren>on</Ren> 
+     </V_ZuoDengGuang>
+     <V_YouDengGuang>
+       <ChePai>on</ChePai>
+       <CeShiYi>on</CeShiYi>
+       <QianDaDeng>on</QianDaDeng>
+       <Ren>on</Ren> 
+     </V_YouDengGuang>
+     <V_DiPan>
+       <Ren>on</Ren> 
+     </V_DiPan>
+     <V_GunLunZhuChe>
+       <ChePai>on</ChePai>
+       <HouLun>on</HouLun>
+       <TaiQi>on</TaiQi>
+       <Ren>on</Ren> 
+     </V_GunLunZhuChe>
+     <V_PingBanZhuChe>
+       <ChePai>on</ChePai>
+       <CheLun>on</CheLun>
+       <WeiDeng>on</WeiDeng>
+       <Ren>on</Ren>
+     </V_PingBanZhuChe>
+  </SuzhouVideo>
+</Items>
