@@ -41,3 +41,16 @@ git push
 ```
 git push --force origin master
 ```
+
+# 查看远程仓库
+```
+git remote -v
+```
+# 删除远程仓库
+```
+git remote remove origin
+```
+# 添加远程仓库
+```
+git remote add origin 仓库地址(https://github.com/654060747/Reptile_pbs.git)
+```
