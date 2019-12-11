@@ -9,17 +9,24 @@ git status
 git add --all
 git commit -m"1"
 ```
+# 撤回add操作 选项(option)
+```
+git reset HEAD option(.|--all|file)
+```
+# 撤回commit操作
+```
+git reset --soft HEAD^
+```
 # （首次上传GitHub，不是首次上传无视本步骤）接着输入
 ```
 git config --global user.email "自己的邮箱"
 git config --global user.name "用户名"
 ```
-
 ```
 git push  
 ```
 
-# 删除a目录下的2.txt文件   删除a目录git rm -r --cached a
+# 删除远程仓库a目录下的2.txt文件   删除a目录git rm -r --cached a
 ```
 git rm -r --cached a/2.txt 
 git commit -m "删除a目录下的2.txt文件" 
