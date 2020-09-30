@@ -41,7 +41,7 @@ if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms512m" "-Xmx5
 Driver class 'org.gjt.mm.mysql.Driver' could not be found, make sure the 'MySQL' driver (jar file) is installed.
 org.gjt.mm.mysql.Driver
 ```
-2、jar包下载地址：https://dev.mysql.com/downloads/connector/j/；下载jar包后， 还要看jar包下是否有org.gjt.mm.mysql该路径下的 Driver.class文件
+2、jar包下载地址：https://dev.mysql.com/downloads/connector/j/ 下载jar包后，还要看jar包下是否有org.gjt.mm.mysql该路径下的 Driver.class文件
 
 3、以下两个jar包下均有这个org.gjt.mm.mysql路径，所以选择任意一个jar包，然后放在kettle的安装路径xxx\data-integration\lib 文件夹重启kettle
 ```
