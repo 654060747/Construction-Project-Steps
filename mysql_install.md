@@ -106,7 +106,7 @@ select * from 表;(查询)
 explain可以清楚看到mysql是如何处理sql语句的，可查看type与Extra的对比
 ```
 explain select * from 表 where 字段 = xxx(不是索引字段);
-explain select * from 表 where id = 5(使用主键或者索引字段，查询速度快，B+树);
+explain select * from 表 where id = 5(使用主键或者索引字段，查询速度快，详细讲解见印象笔记);
 ```
 六、说明：<>内容说明，()语句中真实存在，[]可选语句，|选其一
 
