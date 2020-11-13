@@ -110,18 +110,29 @@ explain select * from 表 where id = 5(使用主键或者索引字段，查询�
 ```
 mysql 数据库授权（给某个用户授权某个数据库）
 ```
-create user 'liuu'@'%' identified by 'ubuntu';（创建用户：liuu用户，%所有ip也可指定某个ip访问，ubuntu密码）
+create user '用户名'@'%' identified by '密码';（创建用户：%所有ip也可指定某个ip访问）
+grant select,insert,update,delete on db.* to '用户名'@'%';（db.*授权db数据库下的所有表，如果只用*代表所有表）
 
-grant select,insert,update,delete on test.* to 'liuu'@'%';（test.*授权test数据库下的所有表，如果只用*代表所有表）
-revoke all on test.* from 'liuu'@'%';（取消授权）
 或者
-grant select,insert,update,delete on test.* to 'liuu'@'%' identified by 'ubuntu';
+
+grant select,insert,update,delete on db.* to '用户名'@'%' identified by '密码';
 
 注意：grant、revoke是root才有的命令
 
+show grands for 用户;（查看数据库用户权限）
+revoke all on db.* from '用户名'@'%';（取消授权，db.*取消的是db库下的权限，*.*取消所有权限只能登陆）
 drop user '用户名'@'IP地址或者%';（删除用户）
 rename user '用户名'@'IP地址' to '新用户名'@'IP地址';（修改用户）
 set password for '用户名'@'IP地址'=Password('新密码');（修改密码）
+```
+mysql备份
+```
+导出：
+mysqldump -u root 数据库db1 > db1.sql -p（备份表结构及数据）
+mysqldump -u root -d db1 > db1.sql -p（加-d只备份表结构）
+导入：
+create database db3;（首先创建新的数据库db）
+mysql -uroot -p db3 < db1.sql（本地导出的数据导入到db3）
 ```
 六、说明：<>内容说明，()语句中真实存在，[]可选语句，|选其一
 
