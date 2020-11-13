@@ -108,6 +108,21 @@ explain可以清楚看到mysql是如何处理sql语句的，可查看type与Extr
 explain select * from 表 where 字段 = xxx(不是索引字段);
 explain select * from 表 where id = 5(使用主键或者索引字段，查询速度快，详细讲解见印象笔记);
 ```
+mysql 数据库授权（给某个用户授权某个数据库）
+```
+create user 'liuu'@'%' identified by 'ubuntu';（创建用户：liuu用户，%所有ip也可指定某个ip访问，ubuntu密码）
+
+grant select,insert,update,delete on test.* to 'liuu'@'%';（test.*授权test数据库下的所有表，如果只用*代表所有表）
+revoke all on test.* from 'liuu'@'%';（取消授权）
+或者
+grant select,insert,update,delete on test.* to 'liuu'@'%' identified by 'ubuntu';
+
+注意：grant、revoke是root才有的命令
+
+drop user '用户名'@'IP地址或者%';（删除用户）
+rename user '用户名'@'IP地址' to '新用户名'@'IP地址';（修改用户）
+set password for '用户名'@'IP地址'=Password('新密码');（修改密码）
+```
 六、说明：<>内容说明，()语句中真实存在，[]可选语句，|选其一
 
 1.数据表创建外键<关联字段的数据类型必须匹配>：constraint 外键名<随便取> foreign key(某个字段作为外键) references  主表名(主表要关联的字段)
