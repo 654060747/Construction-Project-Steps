@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 ```
-3、修改view.py，向模板提交数据，用来操作html模板
+3、修改views.py，向模板提交数据，用来操作html模板，没有views.py新建
 ```
 from django.shortcuts import render
  
