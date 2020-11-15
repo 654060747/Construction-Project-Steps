@@ -44,7 +44,7 @@ python manage.py runserver 0.0.0.0:8000
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],  # 要修改的位置
+        'DIRS': [BASE_DIR / "templates"],  # 要修改的位置，版本问题[BASE_DIR + "/templates"]
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
