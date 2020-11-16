@@ -134,6 +134,11 @@ mysqldump -u root -d db1 > db1.sql -p（加-d只备份表结构）
 create database db3;（首先创建新的数据库db）
 mysql -uroot -p db3 < db1.sql（本地导出的数据导入到db3）
 ```
+mysql设置自增id重新排序
+```
+alter table 表名 drop column id;（删除id）
+alter table 表名 add id mediumint(8) not null primary key auto_increment first;（添加id，mediumint数据类型比int小比smallint大）
+```
 六、说明：<>内容说明，()语句中真实存在，[]可选语句，|选其一
 
 1.数据表创建外键<关联字段的数据类型必须匹配>：constraint 外键名<随便取> foreign key(某个字段作为外键) references  主表名(主表要关联的字段)
