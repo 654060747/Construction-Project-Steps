@@ -130,6 +130,16 @@ mysql备份
 导出：
 mysqldump -u root 数据库db1 > db1.sql -p（备份表结构及数据）
 mysqldump -u root -d db1 > db1.sql -p（加-d只备份表结构）
+
+导出查询出的结果到a.txt：（或者利用navicat、etl等可视化工具）
+mysql -u root -p db1 -e "sql语句(列如：select * from 表)" > a.txt
+
+或者
+
+进入sql使用select...into outfile语句：
+首先查看路径是否设置：show variables like '%secure%',如果secure_file_priv值为NULL，需要设置my.ini配置文件secure_file_priv=保存路径
+然后执行：sql语句 into outfile '保存路径' (character set gbk[设置编码]);
+
 导入：
 create database db3;（首先创建新的数据库db）
 mysql -uroot -p db3 < db1.sql（本地导出的数据导入到db3）
