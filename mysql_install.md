@@ -127,9 +127,12 @@ set password for '用户名'@'IP地址'=Password('新密码');（修改密码）
 ```
 mysql备份
 ```
-导出：
-mysqldump -u root 数据库db1 > db1.sql -p（备份表结构及数据）
-mysqldump -u root -d db1 > db1.sql -p（加-d只备份表结构）
+导出(-p参数以下位置都行)：
+mysqldump -u root 数据库db1 > db1.sql -p（备份某个数据库表结构及数据）
+mysqldump -u root -d db1 > db1.sql -p（加-d只备份数据库db1所有表结构）
+mysqldump -u root -p db1 表 > dump.txt（备份指定表的表结构及数据）
+mysqldump -u root -p --all-databases > a.txt（备份所有数据库）
+mysqldump -u root -p db1 | mysql -h other-host.com(远程服务器) db2（将导出的数据直接导入到远程的服务器上，但请确保两台服务器是相通的，是可以相互访问的）
 
 导出查询出的结果到a.txt：（或者利用navicat、etl等可视化工具）
 mysql -u root -p db1 -e "sql语句(列如：select * from 表)" > a.txt
