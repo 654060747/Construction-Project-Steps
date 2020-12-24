@@ -155,6 +155,9 @@ alter table 表名 add id mediumint(8) not null primary key auto_increment first
 六、说明：<>内容说明，()语句中真实存在，[]可选语句，|选其一
 
 1.数据表创建外键<关联字段的数据类型必须匹配>：constraint 外键名<随便取> foreign key(某个字段作为外键) references  主表名(主表要关联的字段)
+ 表已经建好情况，把从表student class字段映射到主表class id字段：ALTER TABLE student ADD FOREIGN KEY(class) REFERENCES class(id);
+ 删除外键：alter table 表名 drop foreign key 外键名;
+ 查询外键名：show create table 表名;
 
 2.字段名 数据类型 primary key<创建主键，唯一性不能为空>
    字段名 数据类型 not null<非空约束，不能为空>
