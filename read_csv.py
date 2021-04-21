@@ -154,5 +154,5 @@ while True:
 	thread = MyThread(str(i))
 	thread.start()
 	if i%100 == 0:
-		time.sleep(5)
+		time.sleep(4)
 		
