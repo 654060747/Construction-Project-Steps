@@ -10,7 +10,7 @@ class MyThread:
         for i in range(n):
             #创建线程，self.worker线程执行的函数，并指定线程为守护线程
             # 1、Thread.setDaemon(True)，thread.join()(设置为True守护线程子线程需加join方法，子线程未完成任务，主线程不退出等待子线程完成任务)
-            # 2、Thread.setDaemon(False)(设置为False子线程不需要加join方法，主线程完成退出，子线程在后台继续运行)
+            # 2、Thread.setDaemon(False)(设置为False子线程不需要加join方法，主线程完成退出，子线程在后台继续运行，程序完成不会退出)
             Thread(target=self.worker,daemon=True).start()
 
     
